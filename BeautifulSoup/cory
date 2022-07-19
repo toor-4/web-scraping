@@ -1,0 +1,12 @@
+--2022-07-18 18:36:50--  https://coreyms.com/
+Resolving coreyms.com (coreyms.com)... 192.155.94.20, 2600:3c02::f03c:91ff:fe69:3d3c
+Connecting to coreyms.com (coreyms.com)|192.155.94.20|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+     0K .......... .......... .......... .......... .......... 88.9K
+    50K .......... .......... .                                26.8M=0.6s
+
+2022-07-18 18:37:08 (127 KB/s) - ‘index.html’ saved [73016]
+
