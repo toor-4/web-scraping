@@ -23,15 +23,15 @@ with open('weatherForecast.html','r', encoding='utf8') as f:
     file = f.read()
     soup = BeautifulSoup(file, 'lxml')
     
-seven_days = soup.find_all('li', class_ = 'forecast-tombstone')
+days = soup.find_all('li', class_ = 'forecast-tombstone')
 def weather_forecast():
     d, e, f, g = [],[],[],[]
-    for seven_day in seven_days:
-        # print(seven_day)
-        period = seven_day.find('p', class_="period-name").text
-        desc = seven_day.find('p', class_="short-desc").text
-        temp  = seven_day.find('p', class_= "temp").text
-        img = seven_day.find('img')['alt']
+    for day in days:
+        # print day)
+        period = day.find('p', class_="period-name").text
+        desc = day.find('p', class_="short-desc").text
+        temp  = day.find('p', class_= "temp").text
+        img = day.find('img')['alt']
         d.append(period)
         e.append(desc)
         f.append(temp)
@@ -40,12 +40,13 @@ def weather_forecast():
 
 period,desc,temp,img = weather_forecast()
 
+# Use pandas to create a csv file
 weather = pd.DataFrame({'Periods': period, 
         'Desc': desc,
         'Temp': temp,
         'Sum': img
         })
-weather.to_csv('sevendaysFORECAST.csv',index=None)
+weather.to_csv('weather_forecast.csv',index=None)
 print(weather)
 print()
 temperature = weather['Temp'].str.extract("(\d{2})", expand=False)
